@@ -8,15 +8,17 @@ class App extends Component{
   render(){
     return(
       <Router>
-      <div>
-        <Link to="/Movies">Movies</Link>
-        <Link to="/Tvseries">TV Series</Link>
-        <Route path="/Movies" component={Movies}/>
-        <Route path="/Tvseries" component={Tvseries}/>
-        <Route path="/SingleMovie" component={SingleMovie}/>
-      </div>
+        <div>
+          <ul>
+            <li><Link to="/movies">Movies</Link></li>
+            <li><Link to="/tvseries">TV Series</Link></li>
+          </ul>
+          <hr/>
+          <Route exact path="/movies" component={Movies} />
+          <Route path="/movies/:movieId" component={SingleMovie} />
+          <Route path="/tvseries" component={Tvseries}/>
+        </div>
       </Router>
-
     )
   }
 

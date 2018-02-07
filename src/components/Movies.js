@@ -1,18 +1,7 @@
 import React,{Component} from 'react';
-import {Link}  from 'react-router-dom';
 import axios from 'axios';
+import Movie from './Movie';
 
-const styl={
-    'border':'1px solid',
-    'float': 'left',
-    'width':'24%',
-    'height':'24%',
-    'margin':'5px'
-}
-const divMargin={
-    'margin':'10px',
-    'width':'100%'
-}
 
 class Movies extends Component{
     constructor(){
@@ -46,17 +35,9 @@ class Movies extends Component{
     }
     render(){
         return(
-            <div style={divMargin}>
+            <div>
                 {this.state.movies.map((movie,i)=>(
-                   <div style={styl}>
-                   <Link to="/SingleMovie">
-                       <img src={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`} alt="Movie Poster" id={movie.id} value={this.state.id} onClick={this.onChange}/>                       
-                       {/* <input type="text" onChange={this.onChange} value={movie.original_title}/> */}
-                    </Link> 
-                       <h5>{movie.release_date}</h5>
-                       <h6>{movie.overview}</h6>
-                     
-                    </div>
+                    <Movie movie={movie} />
                 ))}
             </div>
         )
