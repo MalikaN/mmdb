@@ -1,16 +1,16 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import Movie from './Movie';
+import './Movie1.css';
+import Header from './Header';
 
 
 class Movies extends Component{
     constructor(){
         super();
         this.state={
-            movies:[],
-            addMovie:''
+            movies:[]
         }
-        this.onChange = this.onChange.bind(this);
     }
 
     componentDidMount(){
@@ -27,18 +27,16 @@ class Movies extends Component{
         });
     }
 
-    onChange(e){
-       this.setState({
-           addMovie:e.target.value
-       })
-       console.log('vc');
-    }
     render(){
         return(
-            <div>
-                {this.state.movies.map((movie,i)=>(
-                    <Movie movie={movie} />
-                ))}
+            <div className="movie-container">
+            { <Header/>}
+                <div className="grid-content">
+               
+                    {this.state.movies.map((movie,i)=>(
+                        <Movie key={movie.id} movie={movie} />
+                    ))}
+                </div>
             </div>
         )
     }

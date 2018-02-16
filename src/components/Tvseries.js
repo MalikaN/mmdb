@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import axios from 'axios';
+import Header from './Header';
+import TVserieslist from './TVserieslist';
 
 class Tvseries extends Component{
     constructor(){
@@ -23,11 +25,15 @@ class Tvseries extends Component{
     }
     render(){
         return(
-            <div>
-               {this.state.tvseries.map((tv,i)=>(
-                   <h1>{tv.original_name}</h1>
+             <div className="tvseries-container">
+             { <Header/>}
+                 <div className="grid-content">
+                 
+                 {this.state.tvseries.map((tv,i)=>(
+                  <TVserieslist key={tv.id} tv={tv}/>
                ))}
-            </div>
+                 </div>
+             </div>
         )
     }
 }

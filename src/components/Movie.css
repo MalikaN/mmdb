@@ -1,0 +1,56 @@
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 24%;
+    float: left;
+    margin:5px;
+    
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+   /* styles for '...'  */
+   .block-with-text {
+    /* Over flow hidden hides the text if it is more than N lines  */
+    overflow: hidden;
+    /* To set '...' in absolute position */
+    position: relative; 
+    /* Use this value to count block height */
+    line-height: 1.2em;
+    /* Max-height = line-height (1.2) * lines max number (2) */
+    max-height: 2.4em; 
+    /* place for '...' */
+    padding-right: 40px;
+    }
+
+    /* create the ... */
+    .block-with-text:before {
+    /* points in the end */
+    content: '...';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of block */
+    right: 30px;
+    bottom: 0;
+    }
+
+    /* hide ... if we have text, which is less than or equal to max lines */
+    .block-with-text:after {
+    /* points in the end */
+    content: '';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of text */
+    right: 20px;
+    /* set width and height */
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    /* bg color = bg color under block */
+    background: white;
+    }
