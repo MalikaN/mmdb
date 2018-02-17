@@ -13,6 +13,7 @@
     display: grid;
     grid-template-columns: 300px 1039px;
     grid-template-rows:400px;
+    background-image: url()
 }
 .crew{
     float: left;

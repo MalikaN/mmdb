@@ -31,7 +31,7 @@ class Tvseries extends Component{
                  
                  {this.state.tvseries.map((tv,i)=>(
                   <TVserieslist key={tv.id} tv={tv}/>
-               ))}
+                 ))}
                  </div>
              </div>
         )
